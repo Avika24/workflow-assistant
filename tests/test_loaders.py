@@ -19,8 +19,9 @@ def test_pdf_text_extraction_empty_pdf_and_unsupported_file_errors(monkeypatch):
     class FakeReader:
         pages = [FakePage()]
 
-    monkeypatch.setattr("loaders.PdfReader", lambda *_args, **_kwargs: FakeReader())
-    assert load_pdf(b"mock pdf bytes") == "Project notes from a text-based PDF."
+    with monkeypatch.context() as scoped:
+        scoped.setattr("loaders.PdfReader", lambda *_args, **_kwargs: FakeReader())
+        assert load_pdf(b"mock pdf bytes") == "Project notes from a text-based PDF."
 
     writer = PdfWriter()
     writer.add_blank_page(width=72, height=72)
