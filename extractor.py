@@ -61,7 +61,7 @@ def extract_analysis(document_text: str, document_date: date) -> Analysis:
             "GEMINI_API_KEY is missing. Add it to your .env file and restart the app."
         )
 
-    model_name = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
+    model_name = os.getenv("GEMINI_MODEL", "gemini-3.8-flash")
     prompt = _build_prompt(document_text, document_date)
     client = genai.Client(api_key=api_key)
     last_error: Exception | None = None

@@ -66,7 +66,7 @@ Python, Streamlit, Google Gemini API (the supported `google-genai` SDK), Pydanti
    pip install -r requirements.txt
    ```
 
-4. Copy `.env.example` to `.env` and add your Gemini API key to `GEMINI_API_KEY`. Keep `.env` private. The model defaults to `gemini-2.5-flash`; set `GEMINI_MODEL` to override it.
+4. Copy `.env.example` to `.env` and add your Gemini API key to `GEMINI_API_KEY`. Keep `.env` private. The model defaults to `gemini-3.8-flash`; set `GEMINI_MODEL` to override it.
 
 5. Run the application:
 
@@ -84,7 +84,7 @@ Python, Streamlit, Google Gemini API (the supported `google-genai` SDK), Pydanti
 
    ```toml
    GEMINI_API_KEY = "your_gemini_api_key"
-   GEMINI_MODEL = "gemini-2.5-flash"
+   GEMINI_MODEL = "gemini-3.8-flash"
    ```
 
 5. Click **Deploy**. Keep the key in Streamlit Secrets; never commit it to GitHub.
