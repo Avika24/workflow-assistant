@@ -108,10 +108,14 @@ See `samples/meeting_notes.txt`. It includes explicit owners, relative deadlines
 
 ## Screenshots
 
-After running the app, add these real application screenshots:
-- `docs/screenshots/input.png` — input screen.
-- `docs/screenshots/results.png` — extracted results.
-- `docs/screenshots/flagged-item.png` — an unverified evidence quote.
+### Input screen
+![DocFlow input screen](docs/screenshots/input.png)
+
+### Extracted results
+![DocFlow results and action items](docs/screenshots/results.png)
+
+### Evidence verification warning
+![DocFlow evidence warning](docs/screenshots/flagged-item.png)
 
 ## Limitations
 
