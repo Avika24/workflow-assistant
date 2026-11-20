@@ -1,0 +1,6 @@
+Team Weekly Update — 20 November 2026
+
+- Karan completed the authentication flow on November 19, 2026.
+- Neha will prepare the QA checklist by next Friday.
+- The team demo is scheduled for December 1, 2026.
+- Rahul needs to investigate the slow dashboard query. A deadline was not discussed.
