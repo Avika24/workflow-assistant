@@ -12,6 +12,20 @@ from loaders import DocumentLoadError, load_uploaded_file
 from verify import verify_action_items
 
 load_dotenv()
+
+
+def _load_streamlit_secrets() -> None:
+    """Expose Streamlit Cloud secrets through the same config used locally."""
+    try:
+        for key in ("GEMINI_API_KEY", "GEMINI_MODEL"):
+            if not os.getenv(key) and key in st.secrets:
+                os.environ[key] = str(st.secrets[key])
+    except FileNotFoundError:
+        # Local development normally uses .env and has no Streamlit secrets.toml.
+        pass
+
+
+_load_streamlit_secrets()
 st.set_page_config(page_title="DocFlow", page_icon="📄", layout="wide")
 
 st.title("📄 DocFlow")
