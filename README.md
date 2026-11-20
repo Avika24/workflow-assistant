@@ -109,13 +109,12 @@ See `samples/meeting_notes.txt`. It includes explicit owners, relative deadlines
 ## Screenshots
 
 ### Input screen
-![DocFlow input screen](docs/screenshots/input.png)
+<img width="1920" height="1020" alt="Screenshot 2026-11-20 233016" src="https://github.com/user-attachments/assets/99baedf0-fc0f-4c20-99a0-258fa9cc4df8" />
+
 
 ### Extracted results
-![DocFlow results and action items](docs/screenshots/results.png)
+<img width="1920" height="1020" alt="Screenshot 2026-11-20 233112" src="https://github.com/user-attachments/assets/a7fbf63b-86d9-4759-bf75-b1b1833cf7ef" />
 
-### Evidence verification warning
-![DocFlow evidence warning](docs/screenshots/flagged-item.png)
 
 ## Limitations
 
