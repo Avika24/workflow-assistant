@@ -35,7 +35,7 @@ flowchart TD
 
 ## Tech stack
 
-Python, Streamlit, Google Gemini API (the existing `google-generativeai` package), Pydantic, pypdf, pandas, python-dotenv, and Pytest.
+Python, Streamlit, Google Gemini API (the supported `google-genai` SDK), Pydantic, pypdf, pandas, python-dotenv, and Pytest.
 
 ## Setup
 
@@ -73,6 +73,23 @@ Python, Streamlit, Google Gemini API (the existing `google-generativeai` package
    ```bash
    streamlit run app.py
    ```
+
+
+## Deploy on Streamlit Community Cloud
+
+1. Open [Streamlit Community Cloud](https://share.streamlit.io/) and sign in with GitHub.
+2. Select **Create app** and choose repository `Avika24/workflow-assistant`, branch `main`, and main file path `app.py`.
+3. In **Advanced settings**, select Python 3.12.
+4. In the **Secrets** field, add the following TOML (replace the placeholder with your own key):
+
+   ```toml
+   GEMINI_API_KEY = "your_gemini_api_key"
+   GEMINI_MODEL = "gemini-2.5-flash"
+   ```
+
+5. Click **Deploy**. Keep the key in Streamlit Secrets; never commit it to GitHub.
+
+See the [official deployment guide](https://docs.streamlit.io/deploy/streamlit-community-cloud/deploy-your-app) for current instructions.
 
 ## Project structure
 
