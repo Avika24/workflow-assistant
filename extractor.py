@@ -38,7 +38,7 @@ Rules:
 - Return null for unstated owners/deadlines.
 - Every action item must have a short exact verbatim evidence quote.
 - Include only source-supported action items; use [] when none exist.
-- Dates must be valid ISO calendar dates.
+- Dates must use YYYY-MM-DD. If a deadline is ambiguous, impossible, or cannot be resolved, return null; omit a key date that cannot be resolved to a valid date.
 - Return JSON only, without Markdown fences or commentary.
 SOURCE DOCUMENT:
 <document>
