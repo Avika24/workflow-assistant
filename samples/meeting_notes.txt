@@ -1,0 +1,5 @@
+Project Sync — 20 November 2026
+
+Riya will prepare the project report by next Friday. Aman must complete the database design by November 25, 2026. The team will review the progress next Monday.
+
+The team agreed to keep the first release focused on document upload, summaries, and action tracking. Priya will share the updated UI mockups by December 2, 2026.
