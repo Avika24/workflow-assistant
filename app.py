@@ -40,7 +40,7 @@ elif uploaded is not None:
     except DocumentLoadError as exc:
         st.error(str(exc))
 
-if st.button("Analyze document", type="primary", use_container_width=True):
+if st.button("Analyze document", type="primary", width="stretch"):
     if not source_text:
         st.error("Add document text or upload a valid TXT/PDF file before analyzing.")
     elif not os.getenv("GEMINI_API_KEY"):
@@ -97,7 +97,7 @@ if result:
                 }
                 for item in items
             ]
-            st.dataframe(pd.DataFrame(rows), use_container_width=True, hide_index=True)
+            st.dataframe(pd.DataFrame(rows), width="stretch", hide_index=True)
             for index, item in enumerate(items, start=1):
                 with st.expander(f"Action {index}: {item['task']}"):
                     st.write(f"**Evidence:** “{item['evidence']}”")
@@ -113,7 +113,7 @@ if result:
         key_dates = result.get("key_dates", [])
         if key_dates:
             dates_frame = pd.DataFrame(key_dates).rename(columns={"event": "Event", "date": "Date"})
-            st.dataframe(dates_frame, use_container_width=True, hide_index=True)
+            st.dataframe(dates_frame, width="stretch", hide_index=True)
         else:
             st.info("No key dates were identified.")
 
@@ -135,7 +135,7 @@ if result:
             pd.DataFrame(csv_rows).to_csv(index=False),
             "docflow_action_items.csv",
             "text/csv",
-            use_container_width=True,
+            width="stretch",
         )
     with json_col:
         st.download_button(
@@ -143,7 +143,7 @@ if result:
             json.dumps(result, indent=2, ensure_ascii=False),
             "docflow_analysis.json",
             "application/json",
-            use_container_width=True,
+            width="stretch",
         )
 else:
     st.info("Your analysis will appear here after you click **Analyze document**.")
