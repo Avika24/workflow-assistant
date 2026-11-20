@@ -1,7 +1,17 @@
 """Pydantic schemas for validated DocFlow output."""
 from datetime import date
+import re
 from typing import Literal
+
 from pydantic import BaseModel, ConfigDict, field_validator
+
+
+def _validate_iso_date(value: str) -> str:
+    if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", value):
+        raise ValueError("Date must use YYYY-MM-DD format.")
+    date.fromisoformat(value)
+    return value
+
 
 class ActionItem(BaseModel):
     model_config = ConfigDict(extra="forbid")
@@ -29,9 +39,8 @@ class ActionItem(BaseModel):
     @field_validator("deadline")
     @classmethod
     def validate_deadline(cls, value: str | None) -> str | None:
-        if value is not None:
-            date.fromisoformat(value)
-        return value
+        return _validate_iso_date(value) if value is not None else None
+
 
 class KeyDate(BaseModel):
     model_config = ConfigDict(extra="forbid")
@@ -41,8 +50,8 @@ class KeyDate(BaseModel):
     @field_validator("date")
     @classmethod
     def validate_date(cls, value: str) -> str:
-        date.fromisoformat(value)
-        return value
+        return _validate_iso_date(value)
+
 
 class Analysis(BaseModel):
     model_config = ConfigDict(extra="forbid")
