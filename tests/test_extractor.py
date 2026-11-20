@@ -41,7 +41,7 @@ def test_extractor_validates_schema_constrained_output(mock_client_class):
 
     with patch.dict("os.environ", {
         "GEMINI_API_KEY": "test-key",
-        "GEMINI_MODEL": "gemini-2.5-flash",
+        "GEMINI_MODEL": "gemini-3.8-flash",
     }):
         result = extract_analysis(
             "Riya will prepare the report by next Friday.",
@@ -50,7 +50,7 @@ def test_extractor_validates_schema_constrained_output(mock_client_class):
 
     assert result.action_items[0].owner == "Riya"
     call = client.models.generate_content.call_args.kwargs
-    assert call["model"] == "gemini-2.5-flash"
+    assert call["model"] == "gemini-3.8-flash"
     assert call["config"].response_mime_type == "application/json"
     assert call["config"].response_schema is Analysis
     client.close.assert_called_once()
